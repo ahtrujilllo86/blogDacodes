@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.navBar {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  background-color: blue;
+}
+
+.barraBusqueda {
+  margin-left: auto;
+}
+
+.barraBusqueda input {
+  height: 40px;
+  min-width: 250px;
+  margin: 10px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.unitBlog {
+  text-align: justify;
+  width: 30vw;
+  border-radius: 5px;
+  border: 1px black solid;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.tarjetaBlog {
+  text-align: center;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px black solid;
+  padding: 10px;
+  margin: 5px;
+}
+
+.unitBlog h1 {
+  text-align: center;
+}
+
+.unitBlog p {
+  font-size: 20px;
+}
+
+.botonRegresar {
+  bottom: 10px;
+  width: 100%;
+  border: 0;
+  background-color: green;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contenedorBlogs {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content:space-between; */
+}
+
+.contenedorBotones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenedorBotones button {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 15px;
+  width: 40%;
+  cursor: pointer;
+}
+
+.botonEliminar {
+  background-color: red;
+}
+
+.botonEliminar:hover{
+  background-color: rgb(228, 36, 36);
+}
+
+.botonEditar {
+  background-color: rgb(244, 241, 44);
+}
+
+.botonEditar:hover {
+  background-color: rgb(230, 227, 62);
+}
+
+.botonNuevoBlog {
+  position: fixed;
+	bottom: 40px;
+	right: 40px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgb(76, 122, 7);
+  color: white;
+  font-size: 70px;
+  height: 80px;
+  width: 80px;
+}
+
+.divFormulario {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  max-width: 25vw;
+  border-radius: 10px;
+  border: 1px black solid;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 20px;
+  min-height: 50vh;
+}
+
+.divFormulario input{
+  height: 5vh;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.divFormulario textarea{
+  min-height: 35vh;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  resize: vertical;
+}
+
+.divFormulario button{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 15px;
+  width: 90%;
+  cursor: pointer;
+  background-color: green;
+  margin: 0 auto;
+}
