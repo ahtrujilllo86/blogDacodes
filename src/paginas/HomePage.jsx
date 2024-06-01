@@ -54,12 +54,13 @@ function HomePage() {
 	}
 
 	const buscarBlog = (datoBusqueda) => {
-		const resultadoBusqueda = datosInicio.filter(blog => {
+		const datosFiltrar = state === null ? datosInicio : state;
+		const resultadoBusqueda = datosFiltrar.filter(blog => {
 			if (blog.title.toString().toLowerCase().includes(datoBusqueda.toLowerCase())) {
 				return blog;
 			}
 		})
-		datoBusqueda !== '' ? setlistadoBlogs(resultadoBusqueda) : setlistadoBlogs(datosInicio);
+		datoBusqueda !== '' ? setlistadoBlogs(resultadoBusqueda) : setlistadoBlogs(datosFiltrar);
   }
   
 	return (
