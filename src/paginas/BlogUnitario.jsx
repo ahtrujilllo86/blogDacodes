@@ -1,5 +1,6 @@
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import '../App.css';
+import NavBar from './NavBar';
 
 function BlogUnitario() {
 	const navigate = useNavigate();
@@ -7,29 +8,29 @@ function BlogUnitario() {
 	const location = useLocation();
 	const { state } = useLocation();
 
-	const datosIniciales = [
+	let datosIniciales = [
 		{
 			id: 1,
-			title: 'Primer Blog Ejemplo',
+			title: 'Primer Texto de Ejemplo',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
-			fecha : new Date(),
-    },
-    {
-			id: 2,
-			title: 'Segundo Blog Ejemplo',
-			content:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
-			fecha : new Date(),
-    },
-    {
-			id: 3,
-			title: 'Tercer Blog Ejemplo',
-			content:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
-			fecha : new Date(),
+			fecha: new Date(),
 		},
-  ];
+		{
+			id: 2,
+			title: 'Segunda Entrada',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
+			fecha: new Date(),
+		},
+		{
+			id: 3,
+			title: 'Tercer Intento',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
+			fecha: new Date(),
+		},
+	];
 
 	const blogUnitario =
 		state !== null
@@ -43,14 +44,17 @@ function BlogUnitario() {
 	};
 
 	return (
-		<div className='unitBlog'>
-			<h1>{blogUnitario.title}</h1>
-			<p>{ blogUnitario.content }</p>
-			<span>{blogUnitario.fecha.toLocaleString()}</span>
-			<button className='botonRegresar' onClick={regresar}>
-				Regresar
-			</button>
-		</div>
+		<>
+			<NavBar/>
+			<div className='unitBlog'>
+				<h1>{blogUnitario.title}</h1>
+				<p>{ blogUnitario.content }</p>
+				<span>{blogUnitario.fecha.toLocaleString()}</span>
+				<button className='botonRegresar' onClick={regresar}>
+					Regresar
+				</button>
+			</div>
+		</>
 	);
 }
 

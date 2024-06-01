@@ -4,6 +4,29 @@ import '../App.css';
 function NavBar(props) {
 
 	// console.log(props)
+	let datosIniciales = [
+		{
+			id: 1,
+			title: 'Primer Texto de Ejemplo',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
+			fecha: new Date(),
+		},
+		{
+			id: 2,
+			title: 'Segunda Entrada',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
+			fecha: new Date(),
+		},
+		{
+			id: 3,
+			title: 'Tercer Intento',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
+			fecha: new Date(),
+		},
+	];
 
 	const navigate = useNavigate();
 	const { state } = useLocation();

@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import BotonNuevoBlog from '../components/BotonNuevoBlog';
 import TarjetaBlog from '../components/TarjetaBlog';
 import { useEffect, useState } from 'react';
+import NavBar from './NavBar';
 
 function HomePage() {
 	let { state } = useLocation();
@@ -10,21 +11,21 @@ function HomePage() {
 	let datosIniciales = [
 		{
 			id: 1,
-			title: 'Primer Blog Ejemplo',
+			title: 'Primer Texto de Ejemplo',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
 			fecha: new Date(),
 		},
 		{
 			id: 2,
-			title: 'Segundo Blog Ejemplo',
+			title: 'Segunda Entrada',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
 			fecha: new Date(),
 		},
 		{
 			id: 3,
-			title: 'Tercer Blog Ejemplo',
+			title: 'Tercer Intento',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
 			fecha: new Date(),
@@ -51,9 +52,19 @@ function HomePage() {
 			state
 		});
 	}
+
+	const buscarBlog = (datoBusqueda) => {
+		const resultadoBusqueda = datosInicio.filter(blog => {
+			if (blog.title.toString().toLowerCase().includes(datoBusqueda.toLowerCase())) {
+				return blog;
+			}
+		})
+		datoBusqueda !== '' ? setlistadoBlogs(resultadoBusqueda) : setlistadoBlogs(datosInicio);
+  }
   
 	return (
 		<>
+			<NavBar buscar={buscarBlog} />
 			<div className='contenedorBlogs'>
 				{listadoBlogs.map((blog) => (
 					<TarjetaBlog key={ blog.id } blog={ blog } eliminar={ eliminar } datosIniciales={datosInicio} />

@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import NavBar from './NavBar';
 
 function Formulario() {
 	const navigate = useNavigate();
@@ -30,6 +31,7 @@ function Formulario() {
 	};
 	return (
 		<div>
+			<NavBar/>
 			<form className='divFormulario' onSubmit={guardarBlog}>
 				<input
 					name='tituloBlog'

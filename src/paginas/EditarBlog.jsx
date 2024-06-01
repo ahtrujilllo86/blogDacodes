@@ -1,6 +1,7 @@
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import '../App.css';
 import { useEffect, useState } from 'react';
+import NavBar from './NavBar';
 
 function EditarBlog() {
 	const navigate = useNavigate();
@@ -9,24 +10,24 @@ function EditarBlog() {
 	const [titulo, settitulo] = useState('');
 	const [contenido, setcontenido] = useState('');
 
-	const datosIniciales = [
+	let datosIniciales = [
 		{
 			id: 1,
-			title: 'Primer Blog Ejemplo',
+			title: 'Primer Texto de Ejemplo',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
 			fecha: new Date(),
 		},
 		{
 			id: 2,
-			title: 'Segundo Blog Ejemplo',
+			title: 'Segunda Entrada',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
 			fecha: new Date(),
 		},
 		{
 			id: 3,
-			title: 'Tercer Blog Ejemplo',
+			title: 'Tercer Intento',
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas velit praesentium quisquam voluptatibus! Ipsa quas magnam molestiae voluptatem ullam!',
 			fecha: new Date(),
@@ -67,6 +68,7 @@ function EditarBlog() {
 
 	return (
 		<div>
+			<NavBar/>
 			<form className='divFormulario' onSubmit={guardarBlog}>
 				<input
 					name='tituloBlog'
