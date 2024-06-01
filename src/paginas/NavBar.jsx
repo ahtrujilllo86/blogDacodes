@@ -41,7 +41,7 @@ function NavBar(props) {
 			<div className='navBar'>
 				<div>
 					<img
-						src='\src\assets\logoDacodes.jpg'
+						src='https://i.ibb.co/5LP6qRB/logo-Dacodes.jpg'
 						alt=''
 						style={ { width: 70, height: 60, borderRadius: 10 } }
 						onClick={() => {
