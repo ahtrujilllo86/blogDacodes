@@ -1,9 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function TarjetaBlog({ blog, eliminar }) {
+function TarjetaBlog({ blog, eliminar, datosIniciales}) {
 	let { state } = useLocation();
 	const navigate = useNavigate();
-	// console.log('tarjetaBlog', state.length);
+	// console.log('datosIniciales', blog);
 
 	const editar = () => {
 		navigate(`/edit/blog/${blog.id}`, {
@@ -12,9 +12,7 @@ function TarjetaBlog({ blog, eliminar }) {
 	};
 
 	const eliminarBlog = (e) => {
-		const nuevaLista = state.filter(blog => blog.id != e.target.name)
-		// state = nuevaLista;
-		// console.log(nuevaLista)
+		const nuevaLista = state != null ? state.filter(blog => blog.id != e.target.name) : datosIniciales.filter(blog => blog.id != e.target.name)
 		eliminar(nuevaLista)
 	}
 
