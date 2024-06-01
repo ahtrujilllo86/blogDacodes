@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 function HomePage() {
 	let { state } = useLocation();
 	const navigate = useNavigate();
-	console.log('HomePageState=> ', state);
+	// console.log('HomePageState=> ', state);
 	let datosIniciales = [
 		{
 			id: 1,
@@ -42,10 +42,8 @@ function HomePage() {
 	// listadoBlogs = datosIniciales;
 
 	const eliminar = (nuevaLista) => {
-		console.log('nuevaLista ',nuevaLista)
 		state = state != null ? nuevaLista : state;
 		if (nuevaLista.length === 0) state = null;
-		console.log('state ',state)
 		setlistadoBlogs(state);
 		if (state === null) setdatosInicio(nuevaLista);
 		if (state === null && nuevaLista.length === 0) setdatosInicio(datosIniciales);

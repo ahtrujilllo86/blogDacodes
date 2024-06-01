@@ -3,11 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 function TarjetaBlog({ blog, eliminar, datosIniciales}) {
 	let { state } = useLocation();
 	const navigate = useNavigate();
-	// console.log('datosIniciales', blog);
+	// console.log('tarjetaBlogState', state);
 
 	const editar = () => {
 		navigate(`/edit/blog/${blog.id}`, {
-			state: state.length === 0 ? blog : state
+			state
 		});
 	};
 

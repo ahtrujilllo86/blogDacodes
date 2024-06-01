@@ -32,11 +32,13 @@ function EditarBlog() {
 			fecha: new Date(),
 		},
 	];
+	let blogUnitario;
 
-	const blogUnitario =
-		state.length !== 0
-			? state.find((blog) => blog.id == id)
-      : datosIniciales.find((blog) => blog.id == id);
+	if (state === null) {
+		blogUnitario = datosIniciales.find((blog) => blog.id == id);
+	} else {
+		blogUnitario = state.find((blog) => blog.id == id);
+	}
   
 	const guardarBlog = (e) => {
     e.preventDefault();
